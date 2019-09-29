@@ -1,18 +1,20 @@
 .ngp-app {
-  background-color: greenyellow;
+  background-color: #111;
+  color: #aaa;
   padding: 10px 25px;
 
   height: 100%;
+
+  font-size: .8em;
 }
 
 .ngp-dashboard-container {
-  background-color: darkblue;
-
   position: relative;
   width: 50%;
 
   height: 400px;
-  border: 1px solid white;
+  border: 1px solid #333;
+  border-radius: 4px;
 
   padding: 25px;
   margin-top: 15px;
@@ -21,10 +23,9 @@
 .ngp-app-title {
   display: inline-block;
   font-style: italic;
-  color: mediumvioletred;
-  background-color: yellow;
 
   &:before {
     content: '>> ';
   }
 }
+

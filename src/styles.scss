@@ -6,8 +6,10 @@ $headline-font: "Source Sans Pro";
 $navigation-font: "Source Sans Pro";
 $content-font: "Source Sans Pro";
 $font-size: 20px;
-$page-background-color: #FF1493;
+$page-background-color: #222;
 $page-foreground-color: #51E5FF;
+
+$page-border-radius: 5px;
 
 
 * {
@@ -40,3 +42,8 @@ html,
 body {
 }
 
+button {
+  border: 1px solid #333;
+  border-radius: $page-border-radius $page-border-radius;
+  padding: 5px 10px;
+}
