@@ -1,0 +1,30 @@
+.ngp-app {
+  background-color: greenyellow;
+  padding: 10px 25px;
+
+  height: 100%;
+}
+
+.ngp-dashboard-container {
+  background-color: darkblue;
+
+  position: relative;
+  width: 50%;
+
+  height: 400px;
+  border: 1px solid white;
+
+  padding: 25px;
+  margin-top: 15px;
+}
+
+.ngp-app-title {
+  display: inline-block;
+  font-style: italic;
+  color: mediumvioletred;
+  background-color: yellow;
+
+  &:before {
+    content: '>> ';
+  }
+}

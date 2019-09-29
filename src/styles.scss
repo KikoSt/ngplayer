@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,700");
+
+$font-stack: "Source Sans Pro";
+$headline-font: "Source Sans Pro";
+$navigation-font: "Source Sans Pro";
+$content-font: "Source Sans Pro";
+$font-size: 20px;
+$page-background-color: #FF1493;
+$page-foreground-color: #51E5FF;
+
+
+* {
+  margin: 0;
+  padding: 0;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-size;
+  height: 100vh;
+}
+
+body {
+  background-color: $page-background-color;
+
+  height: 100vh;
+
+  font-size: 1em;
+  font-family: $font-stack;
+  font-weight: 300;
+
+  padding: 25px 35px;
+}
+
+html,
+body {
+}
+
