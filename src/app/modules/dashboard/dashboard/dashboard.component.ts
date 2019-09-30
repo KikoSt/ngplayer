@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { User } from '../../../models/user.model';
 import { PdfService } from '../../../services/pdf.service';
+import * as JsPDF from 'jspdf';
 
 import * as $ from 'jquery';
 
@@ -21,18 +22,28 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
-  downloadPdf(pdfId) {
-      console.log('HERE it is: %o', this.pdfService);
-      const pdf = this.pdfService.downloadPdf(1);
-      const blob = pdf.output('blob');
-      window.open(URL.createObjectURL(blob));
-
-      const pdfTarget = $('#js-pdf-target');
-      console.log('pdfTarget = %o', pdfTarget);
-      pdfTarget.css('border', '2px solid blue');
-      pdfTarget.src = pdf;
-
+  downloadPdf(pdfId: number) {
+      const pdf: JsPDF = this.pdfService.downloadPdfDoc(pdfId);
       return pdf;
   }
 
+  showPdfInNewWindow(pdfId: number) {
+      const pdfBlob: Blob = this.pdfService.downloadPdfBlob(pdfId);
+      window.open(URL.createObjectURL(pdfBlob));
+
+  }
+
+  showPdfInContainer(pdfId: number, domTargetId: string) {
+      const pdfBlob: Blob = this.pdfService.downloadPdfBlob(pdfId);
+      const $domTarget = $('#' + domTargetId); // TODO: check!
+
+      const pdfUrl = URL.createObjectURL(pdfBlob);
+
+      if (!$domTarget) {
+          return false;
+      }
+
+      $domTarget.css('border', '2px solid blue');
+      $domTarget.data = pdfBlob;
+  }
 }

@@ -9,12 +9,23 @@ export class PdfService {
 
   constructor() { }
 
-  public downloadPdf(pdfId: number) {
+  private downloadPdf(pdfId: number, downloadFormat: string = 'blob'): JsPDF {
       console.log('pdfId = %o', pdfId);
+      console.log('downloadFormat', downloadFormat);
+
       const doc = new JsPDF();
       doc.text(20, 20, 'Hello ' + pdfId);
-      // doc.save('Test.pdf');
+
       return doc;
   }
 
+  public downloadPdfDoc(pdfId: number): JsPDF {
+      return this.downloadPdf(pdfId);
+
+    }
+
+  public downloadPdfBlob(pdfId: number): Blob {
+        const doc = this.downloadPdf(pdfId);
+        return doc.output('blob');
+    }
 }

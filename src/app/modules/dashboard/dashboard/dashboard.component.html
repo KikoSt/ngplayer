@@ -1,6 +1,9 @@
 <div class="module-dashboard-container">
     <p>User: {{ user.username }}</p>
     <p>Password: {{ user.password }}</p>
-    <button (click)="downloadPdf(1)">Click me</button>
-    <object id="js-pdf-target" mime-type="application/pdf" class="pdf-canvas" src=""></object>
+    <button (click)="showPdfInNewWindow(1)">New window</button>
+    <button (click)="showPdfInContainer(1, 'js-pdf-target')">Container</button>
+    <div class="pdf-container">
+        <object id="js-pdf-target" type="application/pdf" class="pdf-canvas" data=""></object>
+    </div>
 </div>
